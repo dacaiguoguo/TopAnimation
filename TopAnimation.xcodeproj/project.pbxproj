@@ -14,6 +14,7 @@
 		9D5944C8285742F400CDAEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5944C7285742F400CDAEB4 /* Assets.xcassets */; };
 		9D5944CB285742F400CDAEB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5944C9285742F400CDAEB4 /* LaunchScreen.storyboard */; };
 		9D5944CE285742F400CDAEB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5944CD285742F400CDAEB4 /* main.m */; };
+		9D5944D62857430F00CDAEB4 /* TopAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5944D52857430F00CDAEB4 /* TopAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		9D5944CA285742F400CDAEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D5944CC285742F400CDAEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5944CD285742F400CDAEB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D5944D42857430F00CDAEB4 /* TopAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopAnimationView.h; sourceTree = "<group>"; };
+		9D5944D52857430F00CDAEB4 /* TopAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopAnimationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				9D5944BF285742F100CDAEB4 /* SceneDelegate.m */,
 				9D5944C1285742F100CDAEB4 /* ViewController.h */,
 				9D5944C2285742F100CDAEB4 /* ViewController.m */,
+				9D5944D42857430F00CDAEB4 /* TopAnimationView.h */,
+				9D5944D52857430F00CDAEB4 /* TopAnimationView.m */,
 				9D5944C4285742F100CDAEB4 /* Main.storyboard */,
 				9D5944C7285742F400CDAEB4 /* Assets.xcassets */,
 				9D5944C9285742F400CDAEB4 /* LaunchScreen.storyboard */,
@@ -148,6 +153,7 @@
 			files = (
 				9D5944C3285742F100CDAEB4 /* ViewController.m in Sources */,
 				9D5944BD285742F100CDAEB4 /* AppDelegate.m in Sources */,
+				9D5944D62857430F00CDAEB4 /* TopAnimationView.m in Sources */,
 				9D5944CE285742F400CDAEB4 /* main.m in Sources */,
 				9D5944C0285742F100CDAEB4 /* SceneDelegate.m in Sources */,
 			);
