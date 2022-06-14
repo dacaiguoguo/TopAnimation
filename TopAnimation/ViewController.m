@@ -19,35 +19,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.thirdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"333"]];
-    self.thirdImageView.contentMode = UIViewContentModeCenter;
-    self.thirdImageView.alpha = 0;
-    self.thirdImageView.clipsToBounds = YES;
-    self.thirdImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-    [self.view addSubview:_thirdImageView];
-    self.secondImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"222"]];
-    self.secondImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-    self.secondImageView.alpha = 0;
-    self.secondImageView.clipsToBounds = YES;
-    self.secondImageView.contentMode = UIViewContentModeCenter;;
-//    CGAffineTransform transform = CGAffineTransformIdentity;
-//    self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-    [self.view addSubview:_secondImageView];
-    self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"111"]];
-    self.firstImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-    self.firstImageView.contentMode = UIViewContentModeCenter;;
-    self.firstImageView.clipsToBounds = YES;
-    [self.view addSubview:_firstImageView];
+//    self.thirdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"333"]];
+//    self.thirdImageView.contentMode = UIViewContentModeCenter;
+//    self.thirdImageView.alpha = 0;
+//    self.thirdImageView.clipsToBounds = YES;
+//    self.thirdImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
+//    [self.view addSubview:_thirdImageView];
+//    self.secondImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"222"]];
+//    self.secondImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
+//    self.secondImageView.alpha = 0;
+//    self.secondImageView.clipsToBounds = YES;
+//    self.secondImageView.contentMode = UIViewContentModeCenter;;
+////    CGAffineTransform transform = CGAffineTransformIdentity;
+////    self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
+//    [self.view addSubview:_secondImageView];
+//    self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"111"]];
+//    self.firstImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
+//    self.firstImageView.contentMode = UIViewContentModeCenter;;
+//    self.firstImageView.clipsToBounds = YES;
+//    [self.view addSubview:_firstImageView];
 
-    self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
+    self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300)];
     [self.view addSubview:self.tView];
 //    self.tView.imageArray = @[@"homeBanner", @"lou", @"shu"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self runAnimateKeyframes];
-//    [self.tView viewDidAppear:animated];
+//    [self runAnimateKeyframes];
+    [self.tView viewDidAppear:animated];
 }
 
 - (void)runAnimateKeyframes {
@@ -80,7 +80,7 @@
             // self.view.backgroundColor = [UIColor yellowColor];
             self.secondImageView.alpha = 0;
             CGAffineTransform transform = CGAffineTransformIdentity;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 0.5, 0.5);
+            self.secondImageView.transform = CGAffineTransformScale(transform, 0.8, 0.8);
 
             self.thirdImageView.alpha = 1;
             self.thirdImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
