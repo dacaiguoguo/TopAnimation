@@ -13,6 +13,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.fourImageView = [[UIImageView alloc] init];
+        self.fourImageView.contentMode = UIViewContentModeCenter;
+        self.fourImageView.alpha = 0;
+        self.fourImageView.frame = self.bounds;
+        [self addSubview:_fourImageView];
+        CGAffineTransform transform = CGAffineTransformIdentity;
+        self.fourImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
+
         self.thirdImageView = [[UIImageView alloc] init];
         self.thirdImageView.contentMode = UIViewContentModeCenter;
         self.thirdImageView.alpha = 0;
@@ -22,14 +30,30 @@
         self.secondImageView.frame = self.bounds;
         self.secondImageView.alpha = 0;
         self.secondImageView.contentMode = UIViewContentModeCenter;
-        // CGAffineTransform transform = CGAffineTransformIdentity;
-        // self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
+        self.secondImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
         [self addSubview:_secondImageView];
         self.firstImageView = [[UIImageView alloc] init];
         self.firstImageView.frame = self.bounds;
         self.firstImageView.contentMode = UIViewContentModeCenter;
         [self addSubview:_firstImageView];
         [self setClipsToBounds:YES];
+
+//        self.bgView = [[UIView alloc] initWithFrame:];
+//        [self addSubview:_bgView];
+        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+        [self addSubview:effectView];
+        effectView.frame = CGRectMake((frame.size.width - 300) / 2, 280, 300, 40);
+        UILabel *searchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
+        [effectView.contentView addSubview:searchLabel];
+        searchLabel.textColor = UIColor.whiteColor;
+        searchLabel.text = @"请输入景点/酒店民宿等";
+        searchLabel.textAlignment = NSTextAlignmentCenter;
+        searchLabel.font = [UIFont systemFontOfSize:14];
+//        _bgView.backgroundColor  = UIColor.systemPinkColor;
+        effectView.layer.cornerRadius = 20;
+        effectView.layer.masksToBounds = YES;
+
     }
     return self;
 }
@@ -38,6 +62,7 @@
     self.firstImageView.image = [UIImage imageNamed:self.imageArray[0]];
     self.secondImageView.image = [UIImage imageNamed:self.imageArray[1]];
     self.thirdImageView.image = [UIImage imageNamed:self.imageArray[2]];
+    self.fourImageView.image = [UIImage imageNamed:self.imageArray[3]];
     [self runAnimateKeyframes];
 }
 
@@ -48,49 +73,60 @@
      *  relativeStartTime 动画所持续的时间
      */
 
-    [UIView animateKeyframesWithDuration:6
+    [UIView animateKeyframesWithDuration:20
                                    delay:0.0
                                  options:UIViewKeyframeAnimationOptionCalculationModeLinear
                               animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.0   // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor redColor];
             self.firstImageView.alpha = 0;
             CGAffineTransform transform = CGAffineTransformIdentity;
             self.firstImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
             self.secondImageView.alpha = 1;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 0.8, 0.8);
+            self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
             // 恢复上一步透明度变成0的view对变形，
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1, 1);
+            self.fourImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
         }];
 
-        [UIView addKeyframeWithRelativeStartTime:1/3.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
+        [UIView addKeyframeWithRelativeStartTime:1/4.0 // 相对于6秒所开始的时间（第2秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor yellowColor];
             self.secondImageView.alpha = 0;
             CGAffineTransform transform = CGAffineTransformIdentity;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 0.8, 0.8);
+            self.secondImageView.transform = CGAffineTransformScale(transform, 1, 1);
 
             self.thirdImageView.alpha = 1;
             self.thirdImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
             // 恢复上一步透明度变成0的view对变形，
             self.firstImageView.transform = CGAffineTransformScale(transform, 1, 1);
         }];
-        [UIView addKeyframeWithRelativeStartTime:2/3.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
+        [UIView addKeyframeWithRelativeStartTime:2/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor greenColor];
             self.thirdImageView.alpha = 0;
             CGAffineTransform transform = CGAffineTransformIdentity;
             self.thirdImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
+            self.fourImageView.alpha = 1;
+            self.fourImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
+            // 恢复上一步透明度变成0的view对变形，
+            self.secondImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:3/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                      animations:^{
+            // self.view.backgroundColor = [UIColor greenColor];
+            self.fourImageView.alpha = 0;
+            CGAffineTransform transform = CGAffineTransformIdentity;
+            self.fourImageView.transform = CGAffineTransformScale(transform, 1, 1);
             self.firstImageView.alpha = 1;
             self.firstImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
             // 恢复上一步透明度变成0的view对变形，
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1, 1);
+            self.thirdImageView.transform = CGAffineTransformScale(transform, 1, 1);
         }];
-
     }
                               completion:^(BOOL finished) {
         [self runAnimateKeyframes];

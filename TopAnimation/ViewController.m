@@ -19,9 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300)];
+    self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width)];
     [self.view addSubview:self.tView];
-    self.tView.imageArray = @[@"111", @"222", @"333"];
+    self.tView.imageArray = @[@"头部GIF-1备份 2", @"头部GIF-2备份 2", @"头部GIF-3备份 2", @"头部GIF-4备份 2"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
