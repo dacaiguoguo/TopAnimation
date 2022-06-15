@@ -82,7 +82,7 @@
                               animations:^{
         // 111
         [UIView addKeyframeWithRelativeStartTime:0.0   // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:2/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor redColor];
             CGAffineTransform transform = CGAffineTransformIdentity;
@@ -109,7 +109,7 @@
         
         // 222
         [UIView addKeyframeWithRelativeStartTime:1/4.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:2/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor yellowColor];
             CGAffineTransform transform = CGAffineTransformIdentity;
@@ -136,7 +136,7 @@
         }];
         // 333
         [UIView addKeyframeWithRelativeStartTime:2/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:2/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor greenColor];
             CGAffineTransform transform = CGAffineTransformIdentity;
@@ -161,7 +161,7 @@
         }];
         // 444
         [UIView addKeyframeWithRelativeStartTime:3/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:2/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor greenColor];
             CGAffineTransform transform = CGAffineTransformIdentity;
