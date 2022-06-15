@@ -73,13 +73,13 @@
      *  relativeStartTime 动画所持续的时间
      */
 
-    [UIView animateKeyframesWithDuration:48
+    [UIView animateKeyframesWithDuration:12
                                    delay:0.0
-                                 options:UIViewKeyframeAnimationOptionCalculationModeCubic
+                                 options:UIViewKeyframeAnimationOptionCalculationModeCubic|UIViewKeyframeAnimationOptionAutoreverse|UIViewKeyframeAnimationOptionRepeat
                               animations:^{
         // 111
         [UIView addKeyframeWithRelativeStartTime:0.0   // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor redColor];
             self.firstImageView.alpha = 0;
@@ -91,8 +91,8 @@
             self.fourImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
         }];
         // 222
-        [UIView addKeyframeWithRelativeStartTime:1/12.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+        [UIView addKeyframeWithRelativeStartTime:1/4.0 // 相对于6秒所开始的时间（第2秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor yellowColor];
             self.secondImageView.alpha = 0;
@@ -105,8 +105,8 @@
             self.firstImageView.transform = CGAffineTransformScale(transform, 1, 1);
         }];
         // 333
-        [UIView addKeyframeWithRelativeStartTime:2/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+        [UIView addKeyframeWithRelativeStartTime:2/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor greenColor];
             self.thirdImageView.alpha = 0;
@@ -118,114 +118,8 @@
             self.secondImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
         }];
         // 444
-        [UIView addKeyframeWithRelativeStartTime:3/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor greenColor];
-            self.fourImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1, 1);
-            self.firstImageView.alpha = 1;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-        // 111
-        [UIView addKeyframeWithRelativeStartTime:4/12.0  // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor redColor];
-            self.firstImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.secondImageView.alpha = 1;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-        }];
-        // 222
-        [UIView addKeyframeWithRelativeStartTime:5/12.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor yellowColor];
-            self.secondImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1, 1);
-
-            self.thirdImageView.alpha = 1;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-        // 333
-        [UIView addKeyframeWithRelativeStartTime:6/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor greenColor];
-            self.thirdImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.fourImageView.alpha = 1;
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-        }];
-        // 444
-        [UIView addKeyframeWithRelativeStartTime:7/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor greenColor];
-            self.fourImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1, 1);
-            self.firstImageView.alpha = 1;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-        // 111
-        [UIView addKeyframeWithRelativeStartTime:8/12.0   // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor redColor];
-            self.firstImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.secondImageView.alpha = 1;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-        }];
-        // 222
-        [UIView addKeyframeWithRelativeStartTime:9/12.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor yellowColor];
-            self.secondImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1, 1);
-
-            self.thirdImageView.alpha = 1;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-        // 333
-        [UIView addKeyframeWithRelativeStartTime:10/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor greenColor];
-            self.thirdImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.fourImageView.alpha = 1;
-            self.fourImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-        }];
-        // 444
-        [UIView addKeyframeWithRelativeStartTime:11/12.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/12.0 // 相对于6秒动画的持续时间（动画持续2秒）
+        [UIView addKeyframeWithRelativeStartTime:3/4.0 // 相对于6秒所开始的时间（第4秒开始动画）
+                                relativeDuration:1/4.0 // 相对于6秒动画的持续时间（动画持续2秒）
                                       animations:^{
             // self.view.backgroundColor = [UIColor greenColor];
             self.fourImageView.alpha = 0;
@@ -238,7 +132,7 @@
         }];
     }
                               completion:^(BOOL finished) {
-        [self runAnimateKeyframes];
+        // [self runAnimateKeyframes];
     }];
 }
 @end
