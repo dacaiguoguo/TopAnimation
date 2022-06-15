@@ -13,19 +13,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.thirdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"333"]];
+        self.thirdImageView = [[UIImageView alloc] init];
         self.thirdImageView.contentMode = UIViewContentModeCenter;
         self.thirdImageView.alpha = 0;
         self.thirdImageView.frame = self.bounds;
         [self addSubview:_thirdImageView];
-        self.secondImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"222"]];
+        self.secondImageView = [[UIImageView alloc] init];
         self.secondImageView.frame = self.bounds;
         self.secondImageView.alpha = 0;
         self.secondImageView.contentMode = UIViewContentModeCenter;
         // CGAffineTransform transform = CGAffineTransformIdentity;
         // self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
         [self addSubview:_secondImageView];
-        self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"111"]];
+        self.firstImageView = [[UIImageView alloc] init];
         self.firstImageView.frame = self.bounds;
         self.firstImageView.contentMode = UIViewContentModeCenter;
         [self addSubview:_firstImageView];
@@ -35,6 +35,9 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    self.firstImageView.image = [UIImage imageNamed:self.imageArray[0]];
+    self.secondImageView.image = [UIImage imageNamed:self.imageArray[1]];
+    self.thirdImageView.image = [UIImage imageNamed:self.imageArray[2]];
     [self runAnimateKeyframes];
 }
 

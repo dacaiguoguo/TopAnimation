@@ -19,91 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.thirdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"333"]];
-//    self.thirdImageView.contentMode = UIViewContentModeCenter;
-//    self.thirdImageView.alpha = 0;
-//    self.thirdImageView.clipsToBounds = YES;
-//    self.thirdImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-//    [self.view addSubview:_thirdImageView];
-//    self.secondImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"222"]];
-//    self.secondImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-//    self.secondImageView.alpha = 0;
-//    self.secondImageView.clipsToBounds = YES;
-//    self.secondImageView.contentMode = UIViewContentModeCenter;;
-////    CGAffineTransform transform = CGAffineTransformIdentity;
-////    self.secondImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-//    [self.view addSubview:_secondImageView];
-//    self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"111"]];
-//    self.firstImageView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 200);
-//    self.firstImageView.contentMode = UIViewContentModeCenter;;
-//    self.firstImageView.clipsToBounds = YES;
-//    [self.view addSubview:_firstImageView];
-
     self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300)];
     [self.view addSubview:self.tView];
-//    self.tView.imageArray = @[@"homeBanner", @"lou", @"shu"];
+    self.tView.imageArray = @[@"111", @"222", @"333"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [self runAnimateKeyframes];
     [self.tView viewDidAppear:animated];
-}
-
-- (void)runAnimateKeyframes {
-
-    /**
-     *  relativeDuration  动画在什么时候开始
-     *  relativeStartTime 动画所持续的时间
-     */
-
-    [UIView animateKeyframesWithDuration:9
-                                   delay:0.0
-                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear
-                              animations:^{
-        [UIView addKeyframeWithRelativeStartTime:0.0   // 相对于6秒所开始的时间（第0秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor redColor];
-            self.firstImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.secondImageView.alpha = 1;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 0.8, 0.8);
-            // 恢复上一步透明度变成0的view对变形，
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-
-        [UIView addKeyframeWithRelativeStartTime:1/3.0 // 相对于6秒所开始的时间（第2秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor yellowColor];
-            self.secondImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.secondImageView.transform = CGAffineTransformScale(transform, 0.8, 0.8);
-
-            self.thirdImageView.alpha = 1;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.2, 1.2);
-            // 恢复上一步透明度变成0的view对变形，
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-        [UIView addKeyframeWithRelativeStartTime:2/3.0 // 相对于6秒所开始的时间（第4秒开始动画）
-                                relativeDuration:1/3.0 // 相对于6秒动画的持续时间（动画持续2秒）
-                                      animations:^{
-            // self.view.backgroundColor = [UIColor greenColor];
-            self.thirdImageView.alpha = 0;
-            CGAffineTransform transform = CGAffineTransformIdentity;
-            self.thirdImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            self.firstImageView.alpha = 1;
-            self.firstImageView.transform = CGAffineTransformScale(transform, 1.4, 1.4);
-            // 恢复上一步透明度变成0的view对变形，
-            self.secondImageView.transform = CGAffineTransformScale(transform, 1, 1);
-        }];
-
-    }
-                              completion:^(BOOL finished) {
-        [self runAnimateKeyframes];
-    }];
 }
 
 @end
