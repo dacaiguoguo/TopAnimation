@@ -107,7 +107,7 @@
      *  relativeStartTime 动画所持续的时间
      */
 
-    [UIView animateKeyframesWithDuration:20
+    [UIView animateKeyframesWithDuration:10
                                    delay:0.0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic|UIViewKeyframeAnimationOptionAutoreverse|UIViewKeyframeAnimationOptionRepeat
                               animations:^{
