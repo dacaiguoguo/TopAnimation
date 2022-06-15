@@ -19,14 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
     self.tView = [[TopAnimationView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width)];
     [self.view addSubview:self.tView];
     self.tView.imageArray = @[@"头部GIF-1备份 2", @"头部GIF-2备份 2", @"头部GIF-3备份 2", @"头部GIF-4备份 2"];
+    [self.tView viewDidAppear:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.tView viewDidAppear:animated];
 }
-
+- (void)applicationWillEnterForeground {
+    [self.tView viewDidAppear:YES];
+}
 @end

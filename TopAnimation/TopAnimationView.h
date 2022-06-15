@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *secondImageView;
 @property (nonatomic, strong) UIImageView *thirdImageView;
 @property (nonatomic, strong) UIImageView *fourImageView;
+@property (nonatomic, strong) UIImageView *bottomImageView;
+@property (nonatomic, strong) UIImageView *aImageView;
+@property (nonatomic, strong) UIImageView *bImageView;
+@property (nonatomic, strong) UIImageView *cImageView;
 @property (nonatomic, copy) NSArray *imageArray;
 @property (nonatomic, strong) UIView *bgView;
 - (void)viewDidAppear:(BOOL)animated; 
