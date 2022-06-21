@@ -15,6 +15,7 @@
 		9D5944CB285742F400CDAEB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5944C9285742F400CDAEB4 /* LaunchScreen.storyboard */; };
 		9D5944CE285742F400CDAEB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5944CD285742F400CDAEB4 /* main.m */; };
 		9D5944D62857430F00CDAEB4 /* TopAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5944D52857430F00CDAEB4 /* TopAnimationView.m */; };
+		9DD804032860A843008F6952 /* FadeLoopAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD804022860A843008F6952 /* FadeLoopAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		9D5944CD285742F400CDAEB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D5944D42857430F00CDAEB4 /* TopAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopAnimationView.h; sourceTree = "<group>"; };
 		9D5944D52857430F00CDAEB4 /* TopAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopAnimationView.m; sourceTree = "<group>"; };
+		9DD804012860A843008F6952 /* FadeLoopAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FadeLoopAnimationView.h; sourceTree = "<group>"; };
+		9DD804022860A843008F6952 /* FadeLoopAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FadeLoopAnimationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,17 +69,19 @@
 			children = (
 				9D5944BB285742F100CDAEB4 /* AppDelegate.h */,
 				9D5944BC285742F100CDAEB4 /* AppDelegate.m */,
+				9D5944C7285742F400CDAEB4 /* Assets.xcassets */,
+				9DD804012860A843008F6952 /* FadeLoopAnimationView.h */,
+				9DD804022860A843008F6952 /* FadeLoopAnimationView.m */,
+				9D5944CC285742F400CDAEB4 /* Info.plist */,
+				9D5944C9285742F400CDAEB4 /* LaunchScreen.storyboard */,
+				9D5944CD285742F400CDAEB4 /* main.m */,
+				9D5944C4285742F100CDAEB4 /* Main.storyboard */,
 				9D5944BE285742F100CDAEB4 /* SceneDelegate.h */,
 				9D5944BF285742F100CDAEB4 /* SceneDelegate.m */,
-				9D5944C1285742F100CDAEB4 /* ViewController.h */,
-				9D5944C2285742F100CDAEB4 /* ViewController.m */,
 				9D5944D42857430F00CDAEB4 /* TopAnimationView.h */,
 				9D5944D52857430F00CDAEB4 /* TopAnimationView.m */,
-				9D5944C4285742F100CDAEB4 /* Main.storyboard */,
-				9D5944C7285742F400CDAEB4 /* Assets.xcassets */,
-				9D5944C9285742F400CDAEB4 /* LaunchScreen.storyboard */,
-				9D5944CC285742F400CDAEB4 /* Info.plist */,
-				9D5944CD285742F400CDAEB4 /* main.m */,
+				9D5944C1285742F100CDAEB4 /* ViewController.h */,
+				9D5944C2285742F100CDAEB4 /* ViewController.m */,
 			);
 			path = TopAnimation;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				9D5944D62857430F00CDAEB4 /* TopAnimationView.m in Sources */,
 				9D5944CE285742F400CDAEB4 /* main.m in Sources */,
 				9D5944C0285742F100CDAEB4 /* SceneDelegate.m in Sources */,
+				9DD804032860A843008F6952 /* FadeLoopAnimationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
