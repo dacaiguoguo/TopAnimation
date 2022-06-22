@@ -10,6 +10,7 @@
 @interface FadeLoopAnimationView ()<CAAnimationDelegate>
 @property (nonatomic, strong) UIImageView *bview;
 @property (nonatomic, strong) UIImageView *aview;
+@property (nonatomic, strong) UIImageView *cview;
 @property (nonatomic, assign) int index;
 @property (nonatomic, assign) BOOL bigAnimation;
 @end
@@ -19,6 +20,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.cview = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self addSubview:_cview];
+        _cview.contentMode = UIViewContentModeCenter;
+
         self.bview = [[UIImageView alloc] initWithFrame:self.bounds];
         [self addSubview:_bview];
         _bview.contentMode = UIViewContentModeCenter;
@@ -40,7 +45,6 @@
     }
     self.imageArray = arr;
     if (self.bigAnimation) {
-        [self bringSubviewToFront:self.aview];
         NSLog(@"_index bigAnimation:%@", @(_index));
         _aview.image = [UIImage imageNamed:arr[_index]];
         NSLog(@"_aview.image:%@", arr[_index]);
@@ -51,6 +55,8 @@
             _bview.image = [UIImage imageNamed:arr[_index + 1]];
             NSLog(@"_bview.image:%@", arr[_index + 1]);
         }
+        _cview.image = _bview.image;
+        self.cview.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
         [self animationMaker1:self.aview big:YES];
         self.index++;
         if (self.index == arr.count) {
@@ -58,17 +64,19 @@
             NSLog(@"_index simalAnimation000:%@", @(_index));
         }
     } else {
-        [self bringSubviewToFront:self.bview];
+//        [self bringSubviewToFront:self.bview];
         if (_index + 1 == arr.count) {
-            _aview.image = [UIImage imageNamed:arr[0]];
+            _cview.image = [UIImage imageNamed:arr[0]];
             NSLog(@"_bview.image:%@", arr[0]);
         } else {
-            _aview.image = [UIImage imageNamed:arr[_index + 1]];
+            _cview.image = [UIImage imageNamed:arr[_index + 1]];
             NSLog(@"_bview.image:%@", arr[_index + 1]);
         }
+        self.cview.transform = CGAffineTransformIdentity;
         [self animationMaker1:self.bview big:NO];
-        _aview.layer.opacity = 1;
-        _aview.layer.transform = CATransform3DMakeScale(1, 1, 1);
+//        [self sendSubviewToBack:self.aview];
+//        _aview.layer.opacity = 1;
+//        _aview.layer.transform = CATransform3DMakeScale(1, 1, 1);
         NSLog(@"_index simalAnimation:%@", @(_index));
         self.index++;
         if (self.index == arr.count) {
@@ -94,7 +102,7 @@
     bAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     bAnimation.duration = 5;
     bAnimation.fillMode = kCAFillModeRemoved;
-    bAnimation.removedOnCompletion = YES;
+    bAnimation.removedOnCompletion = NO;
     bAnimation.delegate = self;
 
     CAKeyframeAnimation *oAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
@@ -102,8 +110,8 @@
     oAnimation.values   = @[@1, @0];
     oAnimation.keyTimes = @[@0.8, @(1)];
     oAnimation.duration = 5;
-    oAnimation.fillMode = kCAFillModeRemoved;
-    oAnimation.removedOnCompletion = YES;
+    oAnimation.fillMode = kCAFillModeForwards;
+    oAnimation.removedOnCompletion = NO;
     [animView.layer addAnimation:bAnimation forKey:@"transform.scale"];
     [animView.layer addAnimation:oAnimation forKey:@"opacity"];
 }
